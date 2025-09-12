@@ -137,35 +137,93 @@
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
         }
 
-        /* Education & Work Experience */
+        /* --- Education & Work Experience Styles --- */
         .edu-work-section {
             display: flex;
             flex-direction: column;
             gap: 2rem;
+            margin-top: 2rem;
         }
 
+        /* Individual item card */
         .edu-work-item {
-            background: #f1f5f9;
+            background: linear-gradient(135deg, #f8fafc, #e0e7ff);
             border-left: 5px solid var(--primary-color);
-            padding: 1rem;
-            border-radius: 6px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 1.2rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
         }
 
+        /* Hover effects */
         .edu-work-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #e0e7ff, #f3f4f6);
         }
 
+        /* Item headings */
         .edu-work-item h3 {
             margin: 0 0 0.5rem 0;
             color: var(--secondary-color);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
+        /* Paragraph styling */
         .edu-work-item p {
             margin: 0.3rem 0;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: #1e293b;
         }
 
+        /* Work experience list */
+        .edu-work-item ul {
+            margin: 0.5rem 0 0 1.2rem;
+            padding: 0;
+            list-style-type: disc;
+        }
+
+        .edu-work-item ul li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* Animated icons */
+        .edu-work-item i {
+            color: var(--primary-color);
+            animation: bounce 2s infinite;
+        }
+
+        /* Bounce animation for icons */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .edu-work-item {
+                padding: 1rem;
+            }
+            .edu-work-item h3 {
+                font-size: 1.1rem;
+            }
+            .edu-work-item p, .edu-work-item ul li {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -256,7 +314,7 @@
                 <div class="edu-work-item">
                     <h3><i class="fas fa-graduation-cap"></i> Bachelor's in Mechanical Engineering</h3>
                     <p><strong>Institution:</strong> Narasaraopeta Engineering College</p>
-                    <p><strong>Year:</strong> 2015 - 2019</p>
+                    <p><strong>Year:</strong> 2019 - 2022</p>
                     <p><strong>Highlights:</strong> Core focus on mechanical design, thermal/structural simulation, and CAD modeling.</p>
                 </div>
 
@@ -264,7 +322,7 @@
                 <div class="edu-work-item">
                     <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
                     <ul>
-                        <li>Senior Python Developer with 8+ years of experience in full-stack development, cloud (AWS), and data pipelines.</li>
+                        <li>Senior Python Developer with 4+ years of experience in full-stack development, cloud (AWS), and data pipelines.</li>
                         <li>Worked on Django, Flask, FastAPI, ReactJS, AngularJS, PySpark, Docker, Kubernetes, CI/CD pipelines.</li>
                         <li>Experience with RISC-V ASIC synthesis, RTL generation, and multi-threaded processor design.</li>
                         <li>Client-facing roles at Centene, Capital One, Ascena Retail, Ameriprise, and Sonata Software.</li>
